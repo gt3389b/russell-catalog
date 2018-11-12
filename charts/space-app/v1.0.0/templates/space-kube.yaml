@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spacekube-deployment
+  labels:
+    app: spacekube
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: spacekube
+  template:
+    metadata:
+      labels:
+        app: spacekube
+    spec:
+      containers:
+      - name: space
+        image: altandocker/space:latest
+        ports:
+        - containerPort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: spacekube-service
+spec:
+  type: NodePort
+  selector:
+    app: spacekube
+  ports:
+  - protocol:  TCP
+    port: 8000
+    targetPort: 80
+    nodePort: 31000

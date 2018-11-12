@@ -1,0 +1,14 @@
+name: spaceapp
+version: 1.0.0
+appVersion: 4.0.9
+description: Our space app
+#keywords:
+#- keyword
+#home: http://www.spacedapp.com/
+icon: https://icon2.kisspng.com/20171221/fye/vector-rocket-5a3bed90718f68.5228411615138768804652.jpg
+#sources:
+#- https://github.com/bitnami/bitnami-docker-redis
+maintainers:
+- name: Russell Leake
+  email: gt3389b@gmail.com
+engine: gotpl
